@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">CineFregon</a>
+    <button class="navbar-toggler" type="button" (click)="changeClass()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="displayMobile">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            aria-current="page"
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <img [src]="homeIcon" alt="Home Icon" width="16px" />Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            routerLink="/tickets"
+            routerLinkActive="active"
+            ><img [src]="ticketIcon" alt="Home Icon" width="16px" />Tickets</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            routerLink="/food"
+            routerLinkActive="active"
+            ><img [src]="foodIcon" alt="Home Icon" width="16px" />Food</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <div
+          class="btn-group pe-3"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            [checked]="currency === 'USD'"
+            (click)="changeCurrency('USD')"
+          />
+          <label class="btn btn-outline-primary" for="btnradio1">USD</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+            [checked]="currency === 'EUR'"
+            (click)="changeCurrency('EUR')"
+          />
+          <label class="btn btn-outline-primary" for="btnradio2">EUR</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio3"
+            autocomplete="off"
+            [checked]="currency === 'MXN'"
+            (click)="changeCurrency('MXN')"
+          />
+          <label class="btn btn-outline-primary" for="btnradio3">MXN</label>
+        </div>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex gap-1"
+            routerLink="/contact"
+            routerLinkActive="active"
+            ><img [src]="contactIcon" alt="Home Icon" width="16px" />Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
